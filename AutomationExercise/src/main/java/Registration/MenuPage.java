@@ -33,7 +33,6 @@ public class MenuPage {
     @Step("verify that the username is visible in the menu bar")
     public MenuPage verifyThatUsernameIsVisible() {
         System.out.println("Account is Created Successfully");
-//    Assert.assertEquals(driver.findElement(usernameIsVisible).getText(),"Haidy Raouf");
         Assert.assertEquals("Logged in as " + driver.findElement(usernameIsVisible).getText(), "Logged in as TestName");
         System.out.println("Username is visible");
         return this;

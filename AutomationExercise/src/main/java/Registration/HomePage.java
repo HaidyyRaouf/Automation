@@ -16,15 +16,7 @@ public class HomePage
 
 
     //Locators
-    //private By searchField = By.cssSelector("");
     private By homePageLogo =By.xpath("//img[@src='/static/images/home/logo.png']");
-
-    //Actions
-//    public HomePage navigate(){
-//        DriverFactory.initiateDriver("Chrome",true);
-//        return this;
-//    }
-
 
     //validations
     @Step("validate that we are in the home page")

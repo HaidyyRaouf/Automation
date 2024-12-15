@@ -26,12 +26,9 @@ public class registration {
 
     @BeforeClass
     public void openTheBrowser() {
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-       driver=DriverFactory.initiateDriver(System.getProperty("browserName"),true);
+        driver=DriverFactory.initiateDriver(System.getProperty("browserName"),true);
         driver.navigate().to(websiteURL);
         jm = new JsonFileManager("src/test/resources/TestData.json");
-//        driverFactory=new DriverFactory();
 
     }
 
@@ -53,8 +50,6 @@ public class registration {
     @Test
 
     public void registrationTestCase() {
-        //DriverFactory.initiateDriver();
-        //new HomePage(driver).navigate()
         new HomePage(driver).validateHomePageLogo();
         new MenuPage(driver).clickOnSignupAndLogin();
         new SignupPage(driver).validateNewUserSignUpPage()
@@ -70,8 +65,5 @@ public class registration {
         new MenuPage(driver).verifyThatUsernameIsVisible()
         .deleteAccount();
         new AccountDeleted(driver).verifyOnAccountDeletedMessage();
-        //Assert.assertEquals(driver.findElement(By.xpath("//h2[@data-qa='account-deleted']")).getText(),"Account Deleted!","Message not appeared");
-       // navigatingToTheHomePage();
-        //System.out.println("Account is deleted");
     }
 }
