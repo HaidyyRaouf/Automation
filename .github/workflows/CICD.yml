@@ -5,11 +5,12 @@ on:
     inputs:
       testsPath:
         description: 'Path to Tests to be Executed'
-        default: ''
+        default: 'registrationTests.registration#registrationTestCase'
+
 
 
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '*/10 * * * *'
 
 
   pull_request:
