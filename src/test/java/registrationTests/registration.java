@@ -26,7 +26,7 @@ public class registration {
 
     @BeforeClass
     public void openTheBrowser() {
-        driver=DriverFactory.initiateDriver(System.getProperty("browserName"),true, System.getProperty("headless"));
+        driver = DriverFactory.initiateDriver(System.getProperty("browserName"),true, Boolean.parseBoolean(System.getProperty("headless")));
         driver.navigate().to(websiteURL);
         jm = new JsonFileManager("src/test/resources/TestData.json");
 
