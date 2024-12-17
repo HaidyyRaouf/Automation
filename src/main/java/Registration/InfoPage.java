@@ -34,7 +34,7 @@ public class InfoPage {
 
     //Action methods
     @Step("filling account info")
-    public InfoPage fillingAccountInfo(String Day, String Month, String Year,String Password)
+    public InfoPage fillingAccountInfo(String Day, String Month, String Year,String Password,String Country, String State, String City, String ZipCode,String number, String First,String Last, String Company,String Address)
     {
         driver.findElement(title).click();
         new Select(driver.findElement(day)).selectByValue(Day);
@@ -43,27 +43,23 @@ public class InfoPage {
         driver.findElement(password).sendKeys(Password);
         driver.findElement(newsLetterCheckPoint).click();
         driver.findElement(specialOfferCheckPoint).click();
-        return this;
-
-    }
-
-
-   @Step("filling country details")
-    public InfoPage fillingCountryDetails(String Country, String State, String City, String ZipCode) {
         new Select(driver.findElement(country)).selectByValue(Country);
         //Enter state , city , zipcode and mobile number
         driver.findElement(state).sendKeys(State);
         driver.findElement(city).sendKeys(City);
         driver.findElement(zipCode).sendKeys(ZipCode);
-        return this;
-    }
-
-    @Step("filling mobile number")
-    public InfoPage fillTheMobileNumber(String number){
         driver.findElement(mobileNumber).sendKeys(number);
+        driver.findElement(firstName).sendKeys(First);
+        driver.findElement(lastName).sendKeys(Last);
+        driver.findElement(company).sendKeys(Company);
+        driver.findElement(address1).sendKeys(Address);
+
         return this;
 
     }
+
+
+
 
     @Step("clicking on create account")
     public InfoPage createAccount(){
@@ -71,14 +67,7 @@ public class InfoPage {
         return this;
     }
 
-    @Step("filling account main info")
-    public InfoPage fillMainInfo(String First,String Last, String Company,String Address){
-        driver.findElement(firstName).sendKeys(First);
-        driver.findElement(lastName).sendKeys(Last);
-        driver.findElement(company).sendKeys(Company);
-        driver.findElement(address1).sendKeys(Address);
-        return this;
-    }
+
 
     //validations
     @Step("verify that we are in the information page")

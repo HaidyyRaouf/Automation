@@ -55,10 +55,7 @@ public class registration {
         new SignupPage(driver).validateNewUserSignUpPage()
         .firstSignUpPage(jm.getTestData("UserName"),"haidyrfaouf74@gmail.com");
         new InfoPage(driver).validateOnEnterAccountInfo()
-        .fillingAccountInfo("6","4", "2000", "Haidy_1571999")
-        .fillMainInfo("Haidy", "Raouf", "Giza Systems", "new cairo, first settlement")
-        .fillingCountryDetails("India","columbia","Bogota","0000")
-        .fillTheMobileNumber("01094346757")
+        .fillingAccountInfo("6","4", "2000", "Haidy_1571999","India","columbia","Bogota","0000","01094346757","Haidy", "Raouf", "Giza Systems", "new cairo, first settlement")
         .createAccount();
         new AccountCreated(driver).verifyOnAccountCreatedMessage()
         .continueToTheHomePage();
