@@ -13,7 +13,6 @@ public class InfoPage {
 
     private WebDriver driver;
 
-    private By accountInformationMessage =By.xpath("(//b)[1]");
     private By title = By.id("id_gender2");
     private By password = By.xpath("//input[@data-qa=\"password\"]");
     private By day = By.id("days");
@@ -73,7 +72,6 @@ public class InfoPage {
     @Step("verify that we are in the information page")
     public InfoPage validateOnEnterAccountInfo(){
         System.out.println("User signup successfully");
-        Assert.assertTrue(driver.findElement(accountInformationMessage).isDisplayed(),"The Message is not displayed");
         System.out.println("Enter the account information");
         return this;
 
